@@ -1,0 +1,112 @@
+﻿<Window x:Class="NameAllPokemonQuiz.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="888" Width="920" Background="White"  MinWidth="800" MinHeight="375" >
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <DockPanel x:Name="LabelsSP" Visibility="Collapsed" FlowDirection="LeftToRight">
+                <Label x:Name="PokemonTextBoxLabel" Content="Name a Pokémon:" FontSize="20" Margin="20,0,20,0" DockPanel.Dock="Left" Height="38"/>
+                <TextBox x:Name="PokemonTextBox" Width="162" Height="32" FontSize="20" TextChanged="TextBox_TextChanged" Margin="0,20,0,20" DockPanel.Dock="Left"/>
+                <Label x:Name="ScoreLabel" Content="Total score: 905/905" FontSize="20" HorizontalContentAlignment="Right" Margin="20,0,20,0" DockPanel.Dock="Right" Height="38"/>
+            </DockPanel>
+            <StackPanel x:Name="FiltersSP" Orientation="Horizontal" Height="291" HorizontalAlignment="Center">
+                <StackPanel Width="146" Height="248">
+                    <Label x:Name="OriginLabel" Content="Origin" FontSize="20" Height="38" Width="66" HorizontalAlignment="Center"/>
+                    <CheckBox x:Name="AllOrigins" Content="All" FontWeight="Bold" Width="76" Checked="AllOrigins_Checked" Padding="4,-1,0,1"></CheckBox>
+                    <CheckBox x:Name="KantoOrigin" Content="Kanto" Width="76" Padding="4,-1,0,1"></CheckBox>
+                    <CheckBox x:Name="JohtoOrigin" Content="Johto" Width="76" Padding="4,-1,0,1"></CheckBox>
+                    <CheckBox x:Name="HoennOrigin" Content="Hoenn" Width="76" Padding="4,-1,0,1"></CheckBox>
+                    <CheckBox x:Name="SinnohOrigin" Content="Sinnoh" Width="76" Padding="4,-1,0,1"></CheckBox>
+                    <CheckBox x:Name="UnovaOrigin" Content="Unova" Width="76" Padding="4,-1,0,1"></CheckBox>
+                    <CheckBox x:Name="KalosOrigin" Content="Kalos" Width="76" Padding="4,-1,0,1"></CheckBox>
+                    <CheckBox x:Name="AlolaOrigin" Content="Alola" Width="76" Padding="4,-1,0,1"></CheckBox>
+                    <CheckBox x:Name="GalarOrigin" Content="Galar" Width="76" Padding="4,-1,0,1"></CheckBox>
+                    <CheckBox x:Name="HisuiOrigin" Content="Hisui" Width="76" Padding="4,-1,0,1"></CheckBox>
+                    <CheckBox x:Name="UnknownOrigin" Content="Unknown" Width="76" Padding="4,-1,0,1"></CheckBox>
+                </StackPanel>
+                <StackPanel Height="248" Width="186">
+                    <Label x:Name="TypeLabel" Content="Type" FontSize="20" Height="38" Width="72"/>
+                    <CheckBox x:Name="AllTypes" Content="All" FontWeight="Bold" Width="76" Checked="AllTypes_Checked"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                        <StackPanel>
+                            <CheckBox x:Name="Normal" Content="Normal" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Fighting" Content="Fighting" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Flying" Content="Flying" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Poison" Content="Poison" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Ground" Content="Ground" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Rock" Content="Rock" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Bug" Content="Bug" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Ghost" Content="Ghost" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Steel" Content="Steel" Width="76" Padding="4,-1,0,1"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <CheckBox x:Name="Fire" Content="Fire" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Water" Content="Water" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Grass" Content="Grass" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Electric" Content="Electric" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Psychic" Content="Psychic" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Ice" Content="Ice" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Dragon" Content="Dragon" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Dark" Content="Dark" Width="76" Padding="4,-1,0,1"/>
+                            <CheckBox x:Name="Fairy" Content="Fairy" Width="76" Padding="4,-1,0,1"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Width="355" Height="248">
+                    <Label x:Name="PokedexLabel" Content="Pokédex" FontSize="20" Height="38" Width="98"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Center">
+                        <StackPanel Width="158">
+                            <RadioButton x:Name="NatDex" GroupName="Dex" Content="National Dex" Padding="4,-1,0,1" Width="153" IsChecked="True"/>
+                            <RadioButton x:Name="RBYDex" GroupName="Dex" Content="Red/Blue/Yellow" Padding="4,-1,0,1" Width="153"/>
+                            <RadioButton x:Name="GSCDex" GroupName="Dex" Content="Gold/Silver/Crystal" Padding="4,-1,0,1" Width="153"/>
+                            <RadioButton x:Name="RSEDex" GroupName="Dex" Content="Ruby/Sapphire/Emerald" Padding="4,-1,0,1" Width="153"/>
+                            <RadioButton x:Name="DPDex" GroupName="Dex" Content="Diamond/Pearl" Padding="4,-1,0,1" Width="153"/>
+                            <RadioButton x:Name="PlatDex" GroupName="Dex" Content="Platinum" Padding="4,-1,0,1" Width="153"/>
+                            <RadioButton x:Name="BWDex" GroupName="Dex" Content="Black/White" Padding="4,-1,0,1" Width="153"/>
+                            <RadioButton x:Name="BW2Dex" GroupName="Dex" Content="Black 2/White 2" Padding="4,-1,0,1" Width="153"/>
+                            <RadioButton x:Name="XYDex1" GroupName="Dex" Content="X/Y - Central" Padding="4,-1,0,1" Width="153"/>
+                            <RadioButton x:Name="XYDex2" GroupName="Dex" Content="X/Y - Coastal" Padding="4,-1,0,1" Width="153"/>
+                            <RadioButton x:Name="XYDex3" GroupName="Dex" Content="X/Y - Mountain" Padding="4,-1,0,1" Width="153"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,16,0,0" Width="185">
+                            <RadioButton x:Name="ORASDex" GroupName="Dex" Content="Omega Ruby/Alpha Sapphire" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="SMDex" GroupName="Dex" Content="Sun/Moon" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="USMDex" GroupName="Dex" Content="Ultra Sun/Ultra Moon" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="LGPEDex" GroupName="Dex" Content="Let's Go Pikachu/Eevee" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="SSDex1" GroupName="Dex" Content="Sword/Shield" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="SSDex2" GroupName="Dex" Content="Sword/Shield Isle of Armor" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="SSDex3" GroupName="Dex" Content="Sword/Shield Crown Tundra" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="LADex" GroupName="Dex" Content="Legends: Arceus" Padding="4,-1,0,1" Width="178"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Width="154" Height="248">
+                    <Label x:Name="OptionsLabel" Content="Options" FontSize="20" Height="38" Width="117"/>
+                    <CheckBox x:Name="DarkMode" Content="Dark Mode" Width="118" Height="23" Checked="DarkMode_Checked"></CheckBox>
+                    <Label x:Name="UnguessedLabel" Content="Unguessed Pokémon:"/>
+                    <RadioButton x:Name="U_Hidden" GroupName="Unguessed" Content="Hidden" Padding="4,-1,0,1" Width="120" IsChecked="True"/>
+                    <RadioButton x:Name="U_Shown" GroupName="Unguessed" Content="Shown" Padding="4,-1,0,1" Width="120"/>
+                    <RadioButton x:Name="U_Blurred" GroupName="Unguessed" Content="Blurred" Padding="4,-1,0,1" Width="120"/>
+                    <RadioButton x:Name="U_Silhouette" GroupName="Unguessed" Content="Silhouette" Height="20" Padding="4,-1,0,1" Width="120"/>
+                    <Label x:Name="GuessedLabel" Content="Guessed Pokémon:"/>
+                    <RadioButton x:Name="G_Hidden" GroupName="Guessed" Content="Hidden" Padding="4,-1,0,1" Width="120"/>
+                    <RadioButton x:Name="G_Shown" GroupName="Guessed" Content="Shown" Padding="4,-1,0,1" Width="120" IsChecked="True"/>
+                    <RadioButton x:Name="G_Blurred" GroupName="Guessed" Content="Blurred" Padding="4,-1,0,1" Width="120"/>
+                    <RadioButton x:Name="G_Silhouette" GroupName="Guessed" Content="Silhouette" Padding="4,-1,0,1" Width="120"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel x:Name="StartQuizWP" HorizontalAlignment="Center">
+                <Button x:Name="StartQuiz" Content="Start Quiz!" Height="44" Click="StartQuiz_Click" Width="200" FontSize="30" FontFamily="Bahnschrift"/>
+                <Label x:Name="Credits" HorizontalAlignment="Center">
+                    <Hyperlink Click="Credits_Click">Credits</Hyperlink>
+                </Label>
+                <Label x:Name="NoPokemonWarning" Content="There are no Pokemon that fit the specified criteria." Foreground="Red" Height="26" Visibility="Collapsed"></Label>
+            </StackPanel>
+            <WrapPanel x:Name="ImgWP" Margin="4,3" Visibility="Collapsed">
+            </WrapPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
