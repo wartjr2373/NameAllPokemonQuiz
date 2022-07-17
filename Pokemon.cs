@@ -35,8 +35,7 @@
         public int MarginTop { get; set; }
         public int MarginRight { get; set; }
         public int MarginBottom { get; set; }
-
-
-        //public Image? Image { get; set; }
+        public string? ImgUri { get; set; }
+        public string? ImgName { get; set; }
     }
 }

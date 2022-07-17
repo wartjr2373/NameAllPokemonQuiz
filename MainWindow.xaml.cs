@@ -66,14 +66,15 @@ namespace NameAllPokemonQuiz
                 }
 
 
-                string imgUri = string.Format( "Resources/{0}.png", p.AltVal != null ? $"{p.SNumber}-{p.AltVal}" : p.SNumber );
+                p.ImgUri = string.Format( "Resources/{0}.png", p.AltVal != null ? $"{p.SNumber}-{p.AltVal}" : p.SNumber );
+                p.ImgName = string.Format("P{0}", p.AltVal != null ? $"{p.SNumber}{p.AltVal}" : p.SNumber );
                 Image image = new()
                 {
                     Width = p.ImgWidth,
                     Height = p.ImgHeight,
                     Margin = new Thickness( p.MarginLeft, p.MarginTop, p.MarginRight, p.MarginBottom ),
-                    Name = $"P{p.SNumber}",
-                    Source = new BitmapImage( new Uri( imgUri, UriKind.Relative ) )
+                    Name = p.ImgName,
+                    Source = new BitmapImage( new Uri( p.ImgUri, UriKind.Relative ) )
                 };
 
                 Rectangle? rectangle = new()
@@ -81,8 +82,8 @@ namespace NameAllPokemonQuiz
                     Width = p.ImgWidth,
                     Height = p.ImgHeight,
                     Margin = new Thickness( p.MarginLeft, p.MarginTop, p.MarginRight, p.MarginBottom ),
-                    Name = $"R_P{p.SNumber}",
-                    OpacityMask = new ImageBrush( new BitmapImage( new Uri( $"../../../Resources/{p.SNumber}.png", UriKind.Relative ) ) )
+                    Name = $"R_{p.ImgName}",
+                    OpacityMask = new ImageBrush( new BitmapImage( new Uri( $"../../../{p.ImgUri}", UriKind.Relative ) ) )
                 };
                 if ( IsDarkMode )
                 {
@@ -151,11 +152,11 @@ namespace NameAllPokemonQuiz
                 {
                     if ( CheckOrigin( p ) && CheckType( p ) && CheckDex( p ) )
                     {
-                        //if ( p.Number != prevNumber )
-                        //{
+                        if ( p.Number != prevNumber )
+                        {
                             PokemonList.Add( p );
-                          //  prevNumber = p.Number;
-                        //}
+                            prevNumber = p.Number;
+                        }
                     }
                 }
 
@@ -352,10 +353,10 @@ namespace NameAllPokemonQuiz
 
             _ = pokemon.SNumber ?? throw new ArgumentNullException( nameof( pokemon.SNumber ) );
 
-            Image? image = ImageList.Where( i => i.Name == $"P{pokemon.SNumber}" ).FirstOrDefault();
+            Image? image = ImageList.Where( i => i.Name == pokemon.ImgName ).FirstOrDefault();
             _ = image ?? throw new ArgumentNullException( nameof( image ) );
 
-            Rectangle? rectangle =  RectangleList.Where( i => i.Name == $"R_P{pokemon.SNumber}" ).FirstOrDefault();
+            Rectangle? rectangle =  RectangleList.Where( i => i.Name == $"R_{pokemon.ImgName}" ).FirstOrDefault();
             _ = rectangle ?? throw new ArgumentNullException( nameof( rectangle ) );
 
             if ( G_Hidden.IsChecked == true )
@@ -869,8 +870,7 @@ namespace NameAllPokemonQuiz
         private void Credits_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show( $"All Pokemon Quiz (C) 2022 Dylan Mead.{Environment.NewLine}{Environment.NewLine}" + 
-                $"Additional sprites provided by:{Environment.NewLine}\u2022 LarryTurbo (DeviantArt){Environment.NewLine}" + 
-                $"\u2022 Arclart (DeviantArt){Environment.NewLine}" + 
+                $"Additional sprites provided by:{Environment.NewLine}\u2022 LarryTurbo (DeviantArt){Environment.NewLine}" +
                 $"\u2022 SilSinn9801 (DeviantArt){Environment.NewLine}" +
                 $"\u2022 Minority (Smogon){Environment.NewLine}" +
                 $"\u2022 leParagon, Megax Rocker, Vent, Cesare_CBass (PokeCommunity)"
@@ -879,8 +879,3 @@ namespace NameAllPokemonQuiz
         }
     }
 }
-
-/* TO DO:
- * Add sprites for regional/alt forms
- * Add transparent background to Melmetal sprite
- */
