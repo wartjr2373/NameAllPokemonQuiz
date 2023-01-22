@@ -27,6 +27,7 @@
         public int? SSDex2 { get; set; }
         public int? SSDex3 { get; set; }
         public int? LADex { get; set; }
+        public int? SVDex { get; set; }
         public int? AltVal { get; set; }
 
         public int ImgWidth { get; set; }

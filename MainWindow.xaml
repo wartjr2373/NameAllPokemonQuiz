@@ -10,7 +10,7 @@
             <DockPanel x:Name="LabelsSP" Visibility="Collapsed" FlowDirection="LeftToRight">
                 <Label x:Name="PokemonTextBoxLabel" Content="Name a Pokémon:" FontSize="20" Margin="20,0,20,0" DockPanel.Dock="Left" Height="38"/>
                 <TextBox x:Name="PokemonTextBox" Width="162" Height="32" FontSize="20" TextChanged="TextBox_TextChanged" Margin="0,20,0,20" DockPanel.Dock="Left"/>
-                <Label x:Name="ScoreLabel" Content="Total score: 905/905" FontSize="20" HorizontalContentAlignment="Right" Margin="20,0,20,0" DockPanel.Dock="Right" Height="38"/>
+                <Label x:Name="ScoreLabel" Content="Total score: 1008/1008" FontSize="20" HorizontalContentAlignment="Right" Margin="20,0,20,0" DockPanel.Dock="Right" Height="38"/>
             </DockPanel>
             <StackPanel x:Name="FiltersSP" Orientation="Horizontal" Height="291" HorizontalAlignment="Center">
                 <StackPanel Width="146" Height="248">
@@ -25,6 +25,7 @@
                     <CheckBox x:Name="AlolaOrigin" Content="Alola" Width="76" Padding="4,-1,0,1"></CheckBox>
                     <CheckBox x:Name="GalarOrigin" Content="Galar" Width="76" Padding="4,-1,0,1"></CheckBox>
                     <CheckBox x:Name="HisuiOrigin" Content="Hisui" Width="76" Padding="4,-1,0,1"></CheckBox>
+                    <CheckBox x:Name="PaldeaOrigin" Content="Paldea" Width="76" Padding="4,-1,0,1"></CheckBox>
                     <CheckBox x:Name="UnknownOrigin" Content="Unknown" Width="76" Padding="4,-1,0,1"></CheckBox>
                 </StackPanel>
                 <StackPanel Height="248" Width="186">
@@ -80,6 +81,7 @@
                             <RadioButton x:Name="SSDex2" GroupName="Dex" Content="Sword/Shield Isle of Armor" Padding="4,-1,0,1" Width="178"/>
                             <RadioButton x:Name="SSDex3" GroupName="Dex" Content="Sword/Shield Crown Tundra" Padding="4,-1,0,1" Width="178"/>
                             <RadioButton x:Name="LADex" GroupName="Dex" Content="Legends: Arceus" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="SVDex" GroupName="Dex" Content="Scarlet/Violet" Padding="4,-1,0,1" Width="178"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>

@@ -20,7 +20,7 @@ namespace NameAllPokemonQuiz
     /// </summary>
     public partial class MainWindow : Window
     {
-        internal int NumberOfPokemon = 905;
+        internal int NumberOfPokemon = 1008;
         internal List<Pokemon> PokemonList;
         internal List<Image> ImageList;
         internal List<Rectangle> RectangleList;
@@ -178,6 +178,7 @@ namespace NameAllPokemonQuiz
                    ( AlolaOrigin.IsChecked == true && p.Origin == "Alola" ) ||
                    ( GalarOrigin.IsChecked == true && p.Origin == "Galar" ) ||
                    ( HisuiOrigin.IsChecked == true && p.Origin == "Hisui" ) ||
+                   ( PaldeaOrigin.IsChecked == true && p.Origin == "Paldea" ) ||
                    ( UnknownOrigin.IsChecked == true && p.Origin == "Unknown" );
         }
 
@@ -223,7 +224,8 @@ namespace NameAllPokemonQuiz
                    ( SSDex1.IsChecked == true && ( p.SSDex1.HasValue ) ) ||
                    ( SSDex2.IsChecked == true && ( p.SSDex2.HasValue ) ) ||
                    ( SSDex3.IsChecked == true && ( p.SSDex3.HasValue ) ) ||
-                   ( LADex.IsChecked == true && ( p.LADex.HasValue ) ) );
+                   ( LADex.IsChecked == true && ( p.LADex.HasValue ) ) ||
+                   ( SVDex.IsChecked == true && ( p.SVDex.HasValue ) ) );
         }
 
         private void SortPokemonList()
@@ -303,6 +305,10 @@ namespace NameAllPokemonQuiz
             else if ( LADex.IsChecked == true )
             {
                 PokemonList.Sort( ( p1, p2 ) => p1.LADex.Value.CompareTo( p2.LADex ) );
+            }
+            else if ( SVDex.IsChecked == true )
+            {
+                PokemonList.Sort( ( p1, p2 ) => p1.SVDex.Value.CompareTo( p2.SVDex ) );
             }
         }
 
@@ -430,6 +436,7 @@ namespace NameAllPokemonQuiz
                 AlolaOrigin.IsChecked = true;
                 GalarOrigin.IsChecked = true;
                 HisuiOrigin.IsChecked = true;
+                PaldeaOrigin.IsChecked = true;
                 UnknownOrigin.IsChecked = true;
 
                 AllOrigins.Content = "None";
@@ -445,6 +452,7 @@ namespace NameAllPokemonQuiz
                 AlolaOrigin.IsChecked = false;
                 GalarOrigin.IsChecked = false;
                 HisuiOrigin.IsChecked = false;
+                PaldeaOrigin.IsChecked = false;
                 UnknownOrigin.IsChecked = false;
 
                 AllOrigins.Content = "All";
@@ -567,6 +575,7 @@ namespace NameAllPokemonQuiz
                 AlolaOrigin.Foreground = Brushes.White;
                 GalarOrigin.Foreground = Brushes.White;
                 HisuiOrigin.Foreground = Brushes.White;
+                PaldeaOrigin.Foreground = Brushes.White;
                 UnknownOrigin.Foreground = Brushes.White;
 
                 OriginLabel.Opacity = 0.87;
@@ -580,6 +589,7 @@ namespace NameAllPokemonQuiz
                 AlolaOrigin.Opacity = 0.87;
                 GalarOrigin.Opacity = 0.87;
                 HisuiOrigin.Opacity = 0.87;
+                PaldeaOrigin.Opacity = 0.87;
                 UnknownOrigin.Opacity = 0.87;
 
                 TypeLabel.Foreground = Brushes.White;
@@ -644,6 +654,7 @@ namespace NameAllPokemonQuiz
                 SSDex2.Foreground = Brushes.White;
                 SSDex3.Foreground = Brushes.White;
                 LADex.Foreground = Brushes.White;
+                SVDex.Foreground = Brushes.White;
 
                 PokedexLabel.Opacity = 0.87;
                 NatDex.Opacity = 0.87;
@@ -665,6 +676,7 @@ namespace NameAllPokemonQuiz
                 SSDex2.Opacity = 0.87;
                 SSDex3.Opacity = 0.87;
                 LADex.Opacity = 0.87;
+                SVDex.Opacity = 0.87;
 
                 OptionsLabel.Foreground = Brushes.White;
                 DarkMode.Foreground = Brushes.White;
@@ -731,6 +743,7 @@ namespace NameAllPokemonQuiz
                 AlolaOrigin.Foreground = Brushes.Black;
                 GalarOrigin.Foreground = Brushes.Black;
                 HisuiOrigin.Foreground = Brushes.Black;
+                PaldeaOrigin.Foreground = Brushes.Black;
                 UnknownOrigin.Foreground = Brushes.Black;
 
                 OriginLabel.Opacity = 1;
@@ -744,6 +757,7 @@ namespace NameAllPokemonQuiz
                 AlolaOrigin.Opacity = 1;
                 GalarOrigin.Opacity = 1;
                 HisuiOrigin.Opacity = 1;
+                PaldeaOrigin.Opacity = 1;
                 UnknownOrigin.Opacity = 1;
 
                 TypeLabel.Foreground = Brushes.Black;
@@ -808,6 +822,7 @@ namespace NameAllPokemonQuiz
                 SSDex2.Foreground = Brushes.Black;
                 SSDex3.Foreground = Brushes.Black;
                 LADex.Foreground = Brushes.Black;
+                SVDex.Foreground = Brushes.Black;
 
                 PokedexLabel.Opacity = 1;
                 NatDex.Opacity = 1;
@@ -829,6 +844,7 @@ namespace NameAllPokemonQuiz
                 SSDex2.Opacity = 1;
                 SSDex3.Opacity = 1;
                 LADex.Opacity = 1;
+                SVDex.Opacity = 1;
 
                 OptionsLabel.Foreground = Brushes.Black;
                 DarkMode.Foreground = Brushes.Black;
@@ -869,11 +885,13 @@ namespace NameAllPokemonQuiz
 
         private void Credits_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show( $"All Pokemon Quiz (C) 2022 Dylan Mead.{Environment.NewLine}{Environment.NewLine}" + 
+            MessageBox.Show( $"All Pokemon Quiz (C) 2023 Dylan Mead.{Environment.NewLine}{Environment.NewLine}" + 
                 $"Additional sprites provided by:{Environment.NewLine}\u2022 LarryTurbo (DeviantArt){Environment.NewLine}" +
                 $"\u2022 SilSinn9801 (DeviantArt){Environment.NewLine}" +
                 $"\u2022 Minority (Smogon){Environment.NewLine}" +
-                $"\u2022 leParagon, Megax Rocker, Vent, Cesare_CBass (PokeCommunity)"
+                $"\u2022 leParagon, Megax Rocker, Vent, Cesare_CBass (PokeCommunity)" +
+                $"\u2022 Arclart (DeviantArt)" +
+                $"\u2022 Ezerart (DeviantArt)"
                 , "Credits" );
                 
         }
