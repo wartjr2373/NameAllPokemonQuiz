@@ -889,8 +889,8 @@ namespace NameAllPokemonQuiz
                 $"Additional sprites provided by:{Environment.NewLine}\u2022 LarryTurbo (DeviantArt){Environment.NewLine}" +
                 $"\u2022 SilSinn9801 (DeviantArt){Environment.NewLine}" +
                 $"\u2022 Minority (Smogon){Environment.NewLine}" +
-                $"\u2022 leParagon, Megax Rocker, Vent, Cesare_CBass (PokeCommunity)" +
-                $"\u2022 Arclart (DeviantArt)" +
+                $"\u2022 leParagon, Megax Rocker, Vent, Cesare_CBass (PokeCommunity){Environment.NewLine}" +
+                $"\u2022 Arclart (DeviantArt){Environment.NewLine}" +
                 $"\u2022 Ezerart (DeviantArt)"
                 , "Credits" );
                 
