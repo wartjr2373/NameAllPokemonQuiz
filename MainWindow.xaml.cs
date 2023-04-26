@@ -891,7 +891,8 @@ namespace NameAllPokemonQuiz
                 $"\u2022 Minority (Smogon){Environment.NewLine}" +
                 $"\u2022 leParagon, Megax Rocker, Vent, Cesare_CBass (PokeCommunity){Environment.NewLine}" +
                 $"\u2022 Arclart (DeviantArt){Environment.NewLine}" +
-                $"\u2022 Ezerart (DeviantArt)"
+                $"\u2022 Ezerart (DeviantArt){Environment.NewLine}" +
+                $"\u2022 u/Jordanos11 (Reddit)"
                 , "Credits" );
                 
         }

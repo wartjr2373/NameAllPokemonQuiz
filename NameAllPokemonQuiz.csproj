@@ -145,8 +145,10 @@
     <None Remove="Resources\1006.png" />
     <None Remove="Resources\1007.png" />
     <None Remove="Resources\1008.png" />
+    <None Remove="Resources\1009.png" />
     <None Remove="Resources\101-1.png" />
     <None Remove="Resources\101.png" />
+    <None Remove="Resources\1010.png" />
     <None Remove="Resources\102.png" />
     <None Remove="Resources\103-1.png" />
     <None Remove="Resources\103.png" />
@@ -1158,6 +1160,8 @@
     <Resource Include="Resources\1006.png" />
     <Resource Include="Resources\1007.png" />
     <Resource Include="Resources\1008.png" />
+    <Resource Include="Resources\1009.png" />
+    <Resource Include="Resources\1010.png" />
     <Resource Include="Resources\128-1.png" />
     <Resource Include="Resources\128-2.png" />
     <Resource Include="Resources\128-3.png" />
