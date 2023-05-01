@@ -7,10 +7,15 @@
         Title="MainWindow" Height="888" Width="920" Background="White"  MinWidth="800" MinHeight="375" >
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel>
-            <DockPanel x:Name="LabelsSP" Visibility="Collapsed" FlowDirection="LeftToRight">
+            <DockPanel x:Name="LabelsSP" FlowDirection="LeftToRight" Visibility="Collapsed">
                 <Label x:Name="PokemonTextBoxLabel" Content="Name a Pokémon:" FontSize="20" Margin="20,0,20,0" DockPanel.Dock="Left" Height="38"/>
                 <TextBox x:Name="PokemonTextBox" Width="162" Height="32" FontSize="20" TextChanged="TextBox_TextChanged" Margin="0,20,0,20" DockPanel.Dock="Left"/>
-                <Label x:Name="ScoreLabel" Content="Total score: 1008/1008" FontSize="20" HorizontalContentAlignment="Right" Margin="20,0,20,0" DockPanel.Dock="Right" Height="38"/>
+                <StackPanel DockPanel.Dock="Right" Height="46">
+                <Label x:Name="ScoreLabel" Content="Total score: 1008/1008" FontSize="20" HorizontalContentAlignment="Right" Margin="20,0,20,0" Height="38"/>
+                    <Label x:Name="GiveUpButton" FontSize="10" HorizontalContentAlignment="Right" Margin="20,-10,90,0">
+                        <Hyperlink Click="GiveUp_Click">Give up</Hyperlink>
+                    </Label>
+                </StackPanel>
             </DockPanel>
             <StackPanel x:Name="FiltersSP" Orientation="Horizontal" Height="291" HorizontalAlignment="Center">
                 <StackPanel Width="146" Height="248">

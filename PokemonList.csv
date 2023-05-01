@@ -436,6 +436,7 @@ Number,Name,Type1,Type2,Origin,RBYDex,GSCDex,RSEDex,DPDex,PlatDex,BWDex,BW2Dex,X
 381,latios,Dragon,Psychic,Hoenn,,,197,,,,,,,,206,,,,,,,,,,32,32,-2,-3,-2,-3,,
 382,kyogre,Water,,Hoenn,,,198,,,,,,,,207,,,,,,,,,,33,32,-3,-3,-2,-3,,
 383,groudon,Ground,,Hoenn,,,199,,,,,,,,208,,,,,,,,,,33,32,-3,-3,-2,-3,,
+383,groudon,Ground,Fire,Hoenn,,,,,,,,,,,208,,,,,,,,,1,36,32,-4,-3,-4,-3,,
 384,rayquaza,Dragon,Flying,Hoenn,,,200,,,,,,,,209,,,,,,,,,,32,32,-2,-3,-2,-3,,
 385,jirachi,Steel,Psychic,Hoenn,,,201,,,,,,,,210,,,,,,,,,,32,32,-2,-3,-2,-3,,
 386,deoxys,Psychic,,Hoenn,,,202,,,,,,,,211,,,,,,,,,,32,32,-2,-3,-2,-3,,

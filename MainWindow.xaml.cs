@@ -52,6 +52,7 @@ namespace NameAllPokemonQuiz
 
             BrushConverter brushConverter = new();
             object? solidColorBrush = brushConverter.ConvertFrom( "#121212" );
+            _ = solidColorBrush ?? throw new ArgumentNullException( nameof( solidColorBrush ) );
 
             foreach ( Pokemon p in PokemonList )
             {
@@ -67,7 +68,7 @@ namespace NameAllPokemonQuiz
 
 
                 p.ImgUri = string.Format( "Resources/{0}.png", p.AltVal != null ? $"{p.SNumber}-{p.AltVal}" : p.SNumber );
-                p.ImgName = string.Format("P{0}", p.AltVal != null ? $"{p.SNumber}{p.AltVal}" : p.SNumber );
+                p.ImgName = string.Format( "P{0}", p.AltVal != null ? $"{p.SNumber}_{p.AltVal}" : p.SNumber );
                 Image image = new()
                 {
                     Width = p.ImgWidth,
@@ -91,10 +92,7 @@ namespace NameAllPokemonQuiz
                 }
                 else
                 {
-                    if ( solidColorBrush != null )
-                    {
-                        rectangle.Fill = (SolidColorBrush)solidColorBrush;
-                    }
+                    rectangle.Fill = (SolidColorBrush)solidColorBrush;
                 }
 
                 if ( U_Hidden.IsChecked == true )
@@ -133,6 +131,8 @@ namespace NameAllPokemonQuiz
             FiltersSP.Visibility = Visibility.Collapsed;
             PokemonTextBoxLabel.Content = "Name a Pokémon:";
             PokemonTextBox.Visibility = Visibility.Visible;
+            PokemonTextBox.Text = string.Empty;
+            GiveUpButton.Visibility = Visibility.Visible;
 
             KeyDown += new KeyEventHandler( RefreshGame );
         }
@@ -348,21 +348,29 @@ namespace NameAllPokemonQuiz
 
             if ( PokemonList.Count == 0 )
             {
-                PokemonTextBoxLabel.Content = "Congratulations!";
+                PokemonTextBoxLabel.Content = "Congratulations! You scored 100%";
                 PokemonTextBox.Visibility = Visibility.Hidden;
+                GiveUpButton.Visibility = Visibility.Hidden;
             }
         }
 
         private void RemovePokemon( Pokemon pokemon )
         {
             PokemonList.Remove( pokemon );
-
             _ = pokemon.SNumber ?? throw new ArgumentNullException( nameof( pokemon.SNumber ) );
 
+            UpdateImgWP( pokemon );
+
+            ScoreLabel.Content = $"Total score: {NumberOfPokemon - PokemonList.Count}/{NumberOfPokemon}";
+            PokemonTextBox.Text = null;
+        }
+
+        private void UpdateImgWP(Pokemon pokemon)
+        {
             Image? image = ImageList.Where( i => i.Name == pokemon.ImgName ).FirstOrDefault();
             _ = image ?? throw new ArgumentNullException( nameof( image ) );
 
-            Rectangle? rectangle =  RectangleList.Where( i => i.Name == $"R_{pokemon.ImgName}" ).FirstOrDefault();
+            Rectangle? rectangle = RectangleList.Where( i => i.Name == $"R_{pokemon.ImgName}" ).FirstOrDefault();
             _ = rectangle ?? throw new ArgumentNullException( nameof( rectangle ) );
 
             if ( G_Hidden.IsChecked == true )
@@ -415,10 +423,6 @@ namespace NameAllPokemonQuiz
                     image.Effect = null;
                 }
             }
-
-            ScoreLabel.Content = $"Total score: {NumberOfPokemon - PokemonList.Count}/{NumberOfPokemon}";
-
-            PokemonTextBox.Text = null;
         }
 
         private void AllOrigins_Checked( object sender, RoutedEventArgs e )
@@ -534,6 +538,19 @@ namespace NameAllPokemonQuiz
                     return;
                 }
             }
+        }
+
+        private void GiveUp_Click( object sender, RoutedEventArgs e )
+        {
+            foreach ( Pokemon p in PokemonList )
+            {
+                UpdateImgWP( p );
+            }
+
+            double percentage = (double)( NumberOfPokemon - PokemonList.Count ) / NumberOfPokemon * 100;
+            PokemonTextBoxLabel.Content = $"You scored {Math.Truncate( percentage * 100 ) / 100}%";
+            PokemonTextBox.Visibility = Visibility.Hidden;
+            GiveUpButton.Visibility = Visibility.Hidden;
         }
 
         private void DarkMode_Checked( object sender, RoutedEventArgs e )
@@ -886,7 +903,7 @@ namespace NameAllPokemonQuiz
         private void Credits_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show( $"All Pokemon Quiz (C) 2023 Dylan Mead.{Environment.NewLine}{Environment.NewLine}" + 
-                $"Additional sprites provided by:{Environment.NewLine}\u2022 LarryTurbo (DeviantArt){Environment.NewLine}" +
+                $"Additional sprites created by:{Environment.NewLine}\u2022 LarryTurbo (DeviantArt){Environment.NewLine}" +
                 $"\u2022 SilSinn9801 (DeviantArt){Environment.NewLine}" +
                 $"\u2022 Minority (Smogon){Environment.NewLine}" +
                 $"\u2022 leParagon, Megax Rocker, Vent, Cesare_CBass (PokeCommunity){Environment.NewLine}" +

@@ -457,6 +457,7 @@
     <None Remove="Resources\380.png" />
     <None Remove="Resources\381.png" />
     <None Remove="Resources\382.png" />
+    <None Remove="Resources\383-1.png" />
     <None Remove="Resources\383.png" />
     <None Remove="Resources\384.png" />
     <None Remove="Resources\385.png" />
@@ -1166,6 +1167,7 @@
     <Resource Include="Resources\128-2.png" />
     <Resource Include="Resources\128-3.png" />
     <Resource Include="Resources\194-1.png" />
+    <Resource Include="Resources\383-1.png" />
     <Resource Include="Resources\666-1.png" />
     <Resource Include="Resources\906.png" />
     <Resource Include="Resources\907.png" />
