@@ -87,6 +87,7 @@
                             <RadioButton x:Name="SSDex3" GroupName="Dex" Content="Sword/Shield Crown Tundra" Padding="4,-1,0,1" Width="178"/>
                             <RadioButton x:Name="LADex" GroupName="Dex" Content="Legends: Arceus" Padding="4,-1,0,1" Width="178"/>
                             <RadioButton x:Name="SVDex" GroupName="Dex" Content="Scarlet/Violet" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="SVDex2" GroupName="Dex" Content="Scarlet/Violet Kitakami" Padding="4,-1,0,1" Width="178"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>

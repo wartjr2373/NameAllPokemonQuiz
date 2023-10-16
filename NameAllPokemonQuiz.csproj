@@ -149,6 +149,16 @@
     <None Remove="Resources\101-1.png" />
     <None Remove="Resources\101.png" />
     <None Remove="Resources\1010.png" />
+    <None Remove="Resources\1011.png" />
+    <None Remove="Resources\1012.png" />
+    <None Remove="Resources\1013.png" />
+    <None Remove="Resources\1014.png" />
+    <None Remove="Resources\1015.png" />
+    <None Remove="Resources\1016.png" />
+    <None Remove="Resources\1017-1.png" />
+    <None Remove="Resources\1017-2.png" />
+    <None Remove="Resources\1017-3.png" />
+    <None Remove="Resources\1017.png" />
     <None Remove="Resources\102.png" />
     <None Remove="Resources\103-1.png" />
     <None Remove="Resources\103.png" />
@@ -1050,6 +1060,7 @@
     <None Remove="Resources\898.png" />
     <None Remove="Resources\899.png" />
     <None Remove="Resources\900.png" />
+    <None Remove="Resources\901-1.png" />
     <None Remove="Resources\901.png" />
     <None Remove="Resources\902.png" />
     <None Remove="Resources\903.png" />
@@ -1163,25 +1174,35 @@
     <Resource Include="Resources\1008.png" />
     <Resource Include="Resources\1009.png" />
     <Resource Include="Resources\1010.png" />
+    <Resource Include="Resources\1011.png" />
+    <Resource Include="Resources\1012.png" />
+    <Resource Include="Resources\1013.png" />
+    <Resource Include="Resources\1014.png" />
+    <Resource Include="Resources\1015.png" />
+    <Resource Include="Resources\1016.png" />
+    <Resource Include="Resources\1017-1.png" />
+    <Resource Include="Resources\1017-2.png" />
+    <Resource Include="Resources\1017-3.png" />
+    <Resource Include="Resources\1017.png" />
     <Resource Include="Resources\128-1.png" />
     <Resource Include="Resources\128-2.png" />
     <Resource Include="Resources\128-3.png" />
     <Resource Include="Resources\194-1.png" />
     <Resource Include="Resources\383-1.png" />
     <Resource Include="Resources\666-1.png" />
+    <Resource Include="Resources\901-1.png" />
     <Resource Include="Resources\906.png" />
     <Resource Include="Resources\907.png" />
     <Resource Include="Resources\908.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CsvHelper" Version="27.2.1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Include="PokemonList.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Reference Include="CsvHelper">
+      <HintPath>CsvHelper.dll</HintPath>
+    </Reference>
     <Resource Include="Resources\001.png" />
     <Resource Include="Resources\002.png" />
     <Resource Include="Resources\003.png" />
