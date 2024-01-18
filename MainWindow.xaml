@@ -11,14 +11,14 @@
                 <Label x:Name="PokemonTextBoxLabel" Content="Name a Pokémon:" FontSize="20" Margin="20,0,20,0" DockPanel.Dock="Left" Height="38"/>
                 <TextBox x:Name="PokemonTextBox" Width="162" Height="32" FontSize="20" TextChanged="TextBox_TextChanged" Margin="0,20,0,20" DockPanel.Dock="Left"/>
                 <StackPanel DockPanel.Dock="Right" Height="46">
-                <Label x:Name="ScoreLabel" Content="Total score: 1008/1008" FontSize="20" HorizontalContentAlignment="Right" Margin="20,0,20,0" Height="38"/>
+                    <Label x:Name="ScoreLabel" Content="Total score: 1008/1008" FontSize="20" HorizontalContentAlignment="Right" Margin="20,0,20,0" Height="38"/>
                     <Label x:Name="GiveUpButton" FontSize="10" HorizontalContentAlignment="Right" Margin="20,-10,90,0">
                         <Hyperlink Click="GiveUp_Click">Give up</Hyperlink>
                     </Label>
                 </StackPanel>
             </DockPanel>
-            <StackPanel x:Name="FiltersSP" Orientation="Horizontal" Height="291" HorizontalAlignment="Center">
-                <StackPanel Width="146" Height="248">
+            <StackPanel x:Name="FiltersSP" Orientation="Horizontal" Height="291" HorizontalAlignment="Center" Width="831">
+                <StackPanel Width="131" Height="248">
                     <Label x:Name="OriginLabel" Content="Origin" FontSize="20" Height="38" Width="66" HorizontalAlignment="Center"/>
                     <CheckBox x:Name="AllOrigins" Content="All" FontWeight="Bold" Width="76" Checked="AllOrigins_Checked" Padding="4,-1,0,1"></CheckBox>
                     <CheckBox x:Name="KantoOrigin" Content="Kanto" Width="76" Padding="4,-1,0,1"></CheckBox>
@@ -33,7 +33,7 @@
                     <CheckBox x:Name="PaldeaOrigin" Content="Paldea" Width="76" Padding="4,-1,0,1"></CheckBox>
                     <CheckBox x:Name="UnknownOrigin" Content="Unknown" Width="76" Padding="4,-1,0,1"></CheckBox>
                 </StackPanel>
-                <StackPanel Height="248" Width="186">
+                <StackPanel Height="248" Width="185">
                     <Label x:Name="TypeLabel" Content="Type" FontSize="20" Height="38" Width="72"/>
                     <CheckBox x:Name="AllTypes" Content="All" FontWeight="Bold" Width="76" Checked="AllTypes_Checked"/>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Center">
@@ -61,37 +61,38 @@
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Width="355" Height="248">
+                <StackPanel Width="362" Height="248">
                     <Label x:Name="PokedexLabel" Content="Pokédex" FontSize="20" Height="38" Width="98"/>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Center">
-                        <StackPanel Width="158">
-                            <RadioButton x:Name="NatDex" GroupName="Dex" Content="National Dex" Padding="4,-1,0,1" Width="153" IsChecked="True"/>
-                            <RadioButton x:Name="RBYDex" GroupName="Dex" Content="Red/Blue/Yellow" Padding="4,-1,0,1" Width="153"/>
-                            <RadioButton x:Name="GSCDex" GroupName="Dex" Content="Gold/Silver/Crystal" Padding="4,-1,0,1" Width="153"/>
-                            <RadioButton x:Name="RSEDex" GroupName="Dex" Content="Ruby/Sapphire/Emerald" Padding="4,-1,0,1" Width="153"/>
-                            <RadioButton x:Name="DPDex" GroupName="Dex" Content="Diamond/Pearl" Padding="4,-1,0,1" Width="153"/>
-                            <RadioButton x:Name="PlatDex" GroupName="Dex" Content="Platinum" Padding="4,-1,0,1" Width="153"/>
-                            <RadioButton x:Name="BWDex" GroupName="Dex" Content="Black/White" Padding="4,-1,0,1" Width="153"/>
-                            <RadioButton x:Name="BW2Dex" GroupName="Dex" Content="Black 2/White 2" Padding="4,-1,0,1" Width="153"/>
-                            <RadioButton x:Name="XYDex1" GroupName="Dex" Content="X/Y - Central" Padding="4,-1,0,1" Width="153"/>
-                            <RadioButton x:Name="XYDex2" GroupName="Dex" Content="X/Y - Coastal" Padding="4,-1,0,1" Width="153"/>
-                            <RadioButton x:Name="XYDex3" GroupName="Dex" Content="X/Y - Mountain" Padding="4,-1,0,1" Width="153"/>
+                        <StackPanel Width="179">
+                            <RadioButton x:Name="NatDex" GroupName="Dex" Content="National Dex" Padding="4,-1,0,1" Width="178" IsChecked="True"/>
+                            <RadioButton x:Name="RBYDex" GroupName="Dex" Content="Red/Blue/Yellow" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="GSCDex" GroupName="Dex" Content="Gold/Silver/Crystal" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="RSEDex" GroupName="Dex" Content="Ruby/Sapphire/Emerald" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="DPDex" GroupName="Dex" Content="Diamond/Pearl" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="PlatDex" GroupName="Dex" Content="Platinum" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="BWDex" GroupName="Dex" Content="Black/White" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="BW2Dex" GroupName="Dex" Content="Black 2/White 2" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="XYDex1" GroupName="Dex" Content="X/Y - Central" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="XYDex2" GroupName="Dex" Content="X/Y - Coastal" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="XYDex3" GroupName="Dex" Content="X/Y - Mountain" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="ORASDex" GroupName="Dex" Content="Omega Ruby/Alpha Sapphire" Padding="4,-1,0,1" Width="178"/>
                         </StackPanel>
                         <StackPanel Margin="0,16,0,0" Width="185">
-                            <RadioButton x:Name="ORASDex" GroupName="Dex" Content="Omega Ruby/Alpha Sapphire" Padding="4,-1,0,1" Width="178"/>
                             <RadioButton x:Name="SMDex" GroupName="Dex" Content="Sun/Moon" Padding="4,-1,0,1" Width="178"/>
                             <RadioButton x:Name="USMDex" GroupName="Dex" Content="Ultra Sun/Ultra Moon" Padding="4,-1,0,1" Width="178"/>
                             <RadioButton x:Name="LGPEDex" GroupName="Dex" Content="Let's Go Pikachu/Eevee" Padding="4,-1,0,1" Width="178"/>
                             <RadioButton x:Name="SSDex1" GroupName="Dex" Content="Sword/Shield" Padding="4,-1,0,1" Width="178"/>
-                            <RadioButton x:Name="SSDex2" GroupName="Dex" Content="Sword/Shield Isle of Armor" Padding="4,-1,0,1" Width="178"/>
-                            <RadioButton x:Name="SSDex3" GroupName="Dex" Content="Sword/Shield Crown Tundra" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="SSDex2" GroupName="Dex" Content="Sword/Shield: Isle of Armor" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="SSDex3" GroupName="Dex" Content="Sword/Shield: Crown Tundra" Padding="4,-1,0,1" Width="178"/>
                             <RadioButton x:Name="LADex" GroupName="Dex" Content="Legends: Arceus" Padding="4,-1,0,1" Width="178"/>
                             <RadioButton x:Name="SVDex" GroupName="Dex" Content="Scarlet/Violet" Padding="4,-1,0,1" Width="178"/>
-                            <RadioButton x:Name="SVDex2" GroupName="Dex" Content="Scarlet/Violet Kitakami" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="SVDex2" GroupName="Dex" Content="Scarlet/Violet: Kitakami" Padding="4,-1,0,1" Width="178"/>
+                            <RadioButton x:Name="SVDex3" GroupName="Dex" Content="Scarlet/Violet: Blueberry" Padding="4,-1,0,1" Width="178"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Width="154" Height="248">
+                <StackPanel Width="155" Height="248">
                     <Label x:Name="OptionsLabel" Content="Options" FontSize="20" Height="38" Width="117"/>
                     <CheckBox x:Name="DarkMode" Content="Dark Mode" Width="118" Height="23" Checked="DarkMode_Checked"></CheckBox>
                     <Label x:Name="UnguessedLabel" Content="Unguessed Pokémon:"/>

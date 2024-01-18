@@ -20,7 +20,7 @@ namespace NameAllPokemonQuiz
     /// </summary>
     public partial class MainWindow : Window
     {
-        internal int NumberOfPokemon = 1017;
+        internal int NumberOfPokemon = 1025;
         internal List<Pokemon> PokemonList;
         internal List<Image> ImageList;
         internal List<Rectangle> RectangleList;
@@ -226,7 +226,8 @@ namespace NameAllPokemonQuiz
                    ( SSDex3.IsChecked == true && ( p.SSDex3.HasValue ) ) ||
                    ( LADex.IsChecked == true && ( p.LADex.HasValue ) ) ||
                    ( SVDex.IsChecked == true && ( p.SVDex.HasValue ) ) ||
-                   ( SVDex2.IsChecked == true && ( p.SVDex2.HasValue ) ) );
+                   ( SVDex2.IsChecked == true && ( p.SVDex2.HasValue ) ) ||
+                   ( SVDex3.IsChecked == true && ( p.SVDex3.HasValue ) ) );
         }
 
         private void SortPokemonList()
@@ -314,6 +315,10 @@ namespace NameAllPokemonQuiz
             else if (SVDex2.IsChecked == true)
             {
                 PokemonList.Sort((p1, p2) => p1.SVDex2.Value.CompareTo(p2.SVDex2));
+            }
+            else if ( SVDex3.IsChecked == true )
+            {
+                PokemonList.Sort( ( p1, p2 ) => p1.SVDex3.Value.CompareTo( p2.SVDex3 ) );
             }
         }
 
@@ -678,6 +683,7 @@ namespace NameAllPokemonQuiz
                 LADex.Foreground = Brushes.White;
                 SVDex.Foreground = Brushes.White;
                 SVDex2.Foreground = Brushes.White;
+                SVDex3.Foreground = Brushes.White;
 
                 PokedexLabel.Opacity = 0.87;
                 NatDex.Opacity = 0.87;
@@ -701,6 +707,7 @@ namespace NameAllPokemonQuiz
                 LADex.Opacity = 0.87;
                 SVDex.Opacity = 0.87;
                 SVDex2.Opacity = 0.87;
+                SVDex3.Opacity = 0.87;
 
                 OptionsLabel.Foreground = Brushes.White;
                 DarkMode.Foreground = Brushes.White;
@@ -848,6 +855,7 @@ namespace NameAllPokemonQuiz
                 LADex.Foreground = Brushes.Black;
                 SVDex.Foreground = Brushes.Black;
                 SVDex2.Foreground = Brushes.Black;
+                SVDex3.Foreground = Brushes.Black;
 
                 PokedexLabel.Opacity = 1;
                 NatDex.Opacity = 1;
@@ -871,6 +879,7 @@ namespace NameAllPokemonQuiz
                 LADex.Opacity = 1;
                 SVDex.Opacity = 1;
                 SVDex2.Opacity = 1;
+                SVDex3.Opacity = 1;
 
                 OptionsLabel.Foreground = Brushes.Black;
                 DarkMode.Foreground = Brushes.Black;
